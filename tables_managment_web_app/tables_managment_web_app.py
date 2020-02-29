@@ -42,4 +42,5 @@ def read_user_input():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
+    # app.run(debug=True)
