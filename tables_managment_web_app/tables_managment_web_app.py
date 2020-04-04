@@ -4,7 +4,7 @@ from pandas import DataFrame as pandasDataFrame
 from pandas import read_csv as pandasReadCsv
 
 
-app = Flask(__name__)
+flask_app = Flask(__name__)
 
 
 def read_csv(csvfile, conn):
@@ -19,14 +19,13 @@ def dict_to_pandas_table_in_html(request_args):
     return pesons_html
 
 
-@app.route('/')
+@flask_app.route('/')
 def redirect_user():
     '''Redirect the user to our main page'''
-    # return f'<a href="{request.base_url}table">Please go here to achieve anything</a>'
     return redirect(url_for('read_user_input'))
 
 
-@app.route('/table')
+@flask_app.route('/table')
 def read_user_input():
     '''Get the request args, convert them to pandas data frame and then to html'''
     user_args = request.args
@@ -42,5 +41,6 @@ def read_user_input():
 
 
 if __name__ == "__main__":
-    app.run()
+    # flask_app.run()  #DEVELOPMENT ONLY
+    app = flask_app.wsgi_app
     # app.run(debug=True)

@@ -5,6 +5,7 @@ Meant for use with py.test.
 Write each test as a function named test_<something>.
 Read more here: http://pytest.org/
 
+import httpie 
 Copyright 2019
 Licensed under MIT
 '''
