@@ -20,7 +20,7 @@ tabelarycznej w przeglądarce. Aplikacja wykorzystuje uwierzytelnianie.
 
 ### Documentation
 
-* [Architecture overview](https://github.com/cruky/tables_managment_web_app/docs/architecture)
+* [Architecture overview](https://github.com/cruky/tables_managment_web_app/tree/master/docs/architecture)
 
 ### Resources
 
