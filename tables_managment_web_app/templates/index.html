@@ -1,0 +1,49 @@
+<h1>Sklep</h1>
+
+{% if id and username %}
+<h2>Witaj {{ username }}, twoje id: {{ id }} (<a href="/logout">wyloguj się</a>)</h2>
+{% else %}
+<h2>(<a href="/login">zaloguj się</a>)</h2>
+{% endif %}
+
+
+{% if id and username %}
+<p>
+    <a href="/add_form">dodaj przedmiot</a>
+</p>
+
+<p>
+    <a href="/delete_form">usuń przedmiot</a>
+</p>
+{% endif %}
+
+<h2>asortyment:</h2>
+<table>
+    <tr>
+        <th>id</th>
+        <th>nazwa</th>
+        <th>cena</th>
+        <th>promocja</th>
+    </tr>
+    {% for p in items %}
+    <tr>
+        <td>{{ p.id }}</td>
+        <td>{{ p.name }}</td>
+        <td>{{ p.price }}/ {{ p.unit }}</td>
+        <td></td>
+    </tr>
+    {% endfor %}
+</table>
+
+<style>
+    table {
+        border-collapse: collapse;
+    }
+
+    td, th {
+        border: 1px solid black;
+        padding: 10px;
+    }
+
+
+</style>

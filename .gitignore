@@ -2,7 +2,6 @@
 **/.idea
 **/.settings/
 **/.DS_Store
-**/*.csv
 **/*.log
 **/*.gz
 *.graphml
