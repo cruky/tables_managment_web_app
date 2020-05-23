@@ -24,6 +24,11 @@ tests/csv_file_test.csv
 * Read data from Sqlite
 * Convert data to table and render HTML templates with Jinja
 
+### Technology
+
+* Python 3.7
+* pip install -r requirements.txt
+
 ### Documentation
 
 * [Architecture overview](https://github.com/cruky/tables_managment_web_app/tree/master/docs/architecture)
