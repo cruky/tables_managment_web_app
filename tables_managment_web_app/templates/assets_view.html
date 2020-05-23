@@ -2,20 +2,54 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Lista</title>
+    <title>Assets</title>
 </head>
 <body>
-<h2>Lista osób:</h2>
-<ul>
-        {% for people in people_list %}
-            <li>
-                <a href="/person/{{ people.id }}"> {{ people.firstname | first }}. {{ people.lastname }}</a>
-                 {% if people.is_admin %}
-                    <b>[ADMIN]</b>
-                    {% endif %}
-            </li>
+<h2>Assets list:</h2>
+      {% if flash_messages %}
+        <ul class=flashes>
+        {% for message in flash_messages %}
+          <li>{{ message }}</li>
         {% endfor %}
-</ul>
-
+        </ul>
+      {% endif %}
+<div class="bordered">
+<table>
+    <tr>
+        <td>Source ID:</td>
+        <td>Type:</td>
+        <td>Latitude:</td>
+        <td>Longitude:</td>
+        <td>Owner of data:</td>
+        <td>Date of insert:</td>
+    </tr>
+    {% for asset in assets_data %}
+    <tr>
+        <td>{{ asset.source_id }}</td>
+        <td>{{ asset.type }}</td>
+         <td>{{ asset.latitude }}</td>
+        <td>{{ asset.longitude }}</td>
+         <td>{{ asset.owner }}</td>
+        <td>{{ asset.date }}</td>
+    </tr>
+    {% endfor %}
+</table>
+ </div>
 </body>
 </html>
+<style>
+    .bordered {
+        border: 1px solid yellow;
+        background: #EFEFEF;
+        padding: 20px;
+    }
+
+    table {
+        border-collapse: collapse;
+    }
+
+    td {
+        border: 1px solid black;
+        padding: 5px;
+    }
+</style>

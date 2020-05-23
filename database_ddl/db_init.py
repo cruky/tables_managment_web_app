@@ -15,8 +15,7 @@ def execute_script(cursor, script_file):
 
 
 if __name__ == '__main__':
-    conn = sqlite3.connect('../assets_database.db')
-    # ./tables_managment_web_app
+    conn = sqlite3.connect('../tables_managment_web_app/assets_database.db')
     cursor = conn.cursor()
 
     execute_script(cursor, 'users_hashed_init.sql')
@@ -36,6 +35,7 @@ if __name__ == '__main__':
     """
     test_asset = {'source_id': "test", 'type': "Building", 'latitude': 54.3897, 'longitude': 18.5816, 'owner': "owner", 'date': datetime.now()}
     # '2019-01-01 10:00:00'
+    conn.execute(assets_query, test_asset)
 
     conn.commit()
     conn.close()

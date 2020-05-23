@@ -1,5 +1,4 @@
 from functools import wraps
-import os
 
 from werkzeug.security import check_password_hash
 from flask import Blueprint, request, get_flashed_messages, render_template, \
@@ -8,7 +7,6 @@ from flask import Blueprint, request, get_flashed_messages, render_template, \
 from db_operations import User, get_session
 
 auth_bp = Blueprint('auth_endpoints', __name__)
-hash_algorithm = os.environ.get("HASH_ALGORITHM", "pbkdf2:sha512:250000")
 
 
 def login_required(view):

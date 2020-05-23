@@ -14,6 +14,9 @@ database_ddl/db_init.py
 Nastepnie by uruchomić aplikację, należy uruchomić plik:
 tables_managment_web_app/tables_managment_web_app.py
 
+Plik CSV można znaleźć w:
+tests/csv_file_test.csv
+
 ### Features
 
 * Read CSV
